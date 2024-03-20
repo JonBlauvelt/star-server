@@ -1,22 +1,23 @@
-import React from 'react'
-import Typography from '@mui/material/Typography';
-import { Stack } from "@mui/material"
-import useElection from '../../ElectionContextProvider';
-import Race from './Race';
-import AddRace from './AddRace';
+import React from "react";
+import Typography from "@mui/material/Typography";
+import { Stack } from "@mui/material";
+import useElection from "../../ElectionContextProvider";
+import Race from "./Race";
+import AddRace from "./AddRace";
 
 export default function Races() {
-    const { election } = useElection()
+  const { election } = useElection();
 
-    return (
-        <Stack spacing={2}>
-            <Typography gutterBottom variant="h4" component="h4">Races</Typography>
+  return (
+    <Stack spacing={2}>
+      <Typography gutterBottom variant="h4" component="h4">
+        Races
+      </Typography>
 
-            {election.races?.map((race, race_index) => (
-                <Race race={race} race_index={race_index} />
-            ))
-            }
-            <AddRace/>
-        </Stack >
-    )
+      {election.races?.map((race, race_index) => (
+        <Race key={race.race_id} race={race} race_index={race_index} />
+      ))}
+      <AddRace />
+    </Stack>
+  );
 }

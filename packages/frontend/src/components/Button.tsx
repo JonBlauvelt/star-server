@@ -1,25 +1,35 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import { MouseEventHandler } from 'react'
+import PropTypes from "prop-types";
+import React from "react";
+import { MouseEventHandler } from "react";
 
 type Props = {
-    onClick: MouseEventHandler,
-    color: string,
-    text: string,
-  }
+  onClick: MouseEventHandler;
+  color: string;
+  text: string;
+};
 
-const Button = ({onClick,color,text}:Props) => {
-    return <button onClick = {onClick} style={{backgroundColor: color}} type='button' className='btn'> {text} </button>
-}
+const Button = ({ onClick, color, text }: Props) => {
+  return (
+    <button
+      onClick={onClick}
+      style={{ backgroundColor: color }}
+      type="button"
+      className="btn"
+    >
+      {" "}
+      {text}{" "}
+    </button>
+  );
+};
 
 Button.defaultProps = {
-    color:'steelblue',
-}
+  color: "steelblue",
+};
 
 Button.propTypes = {
-    text: PropTypes.string,
-    color: PropTypes.string,
-    onclick: PropTypes.func
-}
+  text: PropTypes.string,
+  color: PropTypes.string,
+  onclick: PropTypes.func,
+};
 
-export default Button
+export default Button;

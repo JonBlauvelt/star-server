@@ -31,12 +31,9 @@
     "dev:clean": "npm run dev -- --force",
     "clean": "npx rimraf build node_modules ../node_modules",
     "build": "tsc && vite build",
+    "lint": "npx eslint --max-warnings 156 src",
+    "lint:fix": "npm run lint -- --fix",
     "start": "vite preview"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
   },
   "browserslist": {
     "production": [
@@ -55,8 +52,17 @@
     "@types/node": "^20.11.24",
     "@types/react": "^17.0.44",
     "@types/react-dom": "^17.0.15",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
     "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unused-imports": "^3.1.0",
     "identity-obj-proxy": "^3.0.0",
+    "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3",
     "vite": "^5.1.5",
